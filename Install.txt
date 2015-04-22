@@ -1,0 +1,70 @@
+Install Instructions
+ 
+/********  description.ext
+
+#include "spaz_spawn.hpp"
+
+
+
+/********  onPlayerRespawn.sqf
+
+if (isNil "inSpawnPoint") then 
+{
+	inSpawnPoint = false;
+};
+waitUntil { inSpawnPoint };
+createDialog "spaz_spawn";
+[] execVM "Spaz_Spawn.sqf";
+noesckey = (findDisplay 8332) displayAddEventHandler ["KeyDown", "if ((_this select 1) == 1) then { true }"];
+
+
+
+/********  Add a Sensor in your Mission.sqm
+
+		class Item0
+		{
+			position[] = {8886.766,102.1,9097.741}; //respawn_west Location
+			a = 10;
+			b = 10;
+			activationBy = "ANY";
+			repeating = 1;
+			interruptable = 1;
+			age = "UNKNOWN";
+			name = "SPAWNPOINT";
+			expCond = "(player distance SPAWNPOINT) < 10;";
+			expActiv = "hint ""You are in the clone room""; inSpawnPoint = true;};";
+			expDesactiv = "inSpawnPoint = false;";
+			class Effects{};
+		};
+
+
+/********  To change your spawn locations + map images go to Spaz_Spawn.sqf
+
+Altis_Map = "images\map1.jpg";
+Statis_Map = "images\map2.jpg";
+Bronholm_Map = "images\map3.jpg";
+Chernarus_Map = "images\map4.jpg";
+
+Altis_Spawn_North = [0,0,0];
+Altis_Spawn_South = [0,0,0];
+Altis_Spawn_East = [0,0,0];
+Altis_Spawn_West = [0,0,0];
+Altis_Spawn_Centeral = [0,0,0];
+
+Statis_Spawn_North = [0,0,0];
+Statis_Spawn_South = [0,0,0];
+Statis_Spawn_East = [0,0,0];
+Statis_Spawn_West = [0,0,0];
+Statis_Spawn_Centeral = [0,0,0];
+
+Bronholm_Spawn_North = [3516.31,17886.3,0.00151825];
+Bronholm_Spawn_South = [15296.9,163.178,0.00105];
+Bronholm_Spawn_East = [13281.8,12691.9,0.00137055];
+Bronholm_Spawn_West = [792.478,7133.28,0.00152135];
+Bronholm_Spawn_Centeral = [9367.02,8402.27,0.00139618];
+
+Chernarus_Spawn_North = [0,0,0];
+Chernarus_Spawn_South = [0,0,0];
+Chernarus_Spawn_East = [0,0,0];
+Chernarus_Spawn_West = [0,0,0];
+Chernarus_Spawn_Centeral = [0,0,0];
