@@ -1,32 +1,32 @@
 
 Altis_Map		= "images\map1.jpg";
 Statis_Map		= "images\map2.jpg";
-Bronholm_Map	= "images\map3.jpg";
+Bornholm_Map	= "images\map3.jpg";
 Chernarus_Map	= "images\map4.jpg";
 
 Altis_Spawn_North 			= [0,0,0];
 Altis_Spawn_South 			= [0,0,0];
 Altis_Spawn_East 			= [0,0,0];
 Altis_Spawn_West 			= [0,0,0];
-Altis_Spawn_Centeral 		= [0,0,0];
+Altis_Spawn_Central 		= [0,0,0];
 
 Statis_Spawn_North 			= [0,0,0];
 Statis_Spawn_South 			= [0,0,0];
 Statis_Spawn_East 			= [0,0,0];
 Statis_Spawn_West 			= [0,0,0];
-Statis_Spawn_Centeral 		= [0,0,0];
+Statis_Spawn_Central 		= [0,0,0];
 
-Bronholm_Spawn_North 		= [3516.31,17886.3,0.00151825];
-Bronholm_Spawn_South 		= [15296.9,163.178,0.00105];
-Bronholm_Spawn_East 		= [13281.8,12691.9,0.00137055];
-Bronholm_Spawn_West 		= [792.478,7133.28,0.00152135];
-Bronholm_Spawn_Centeral 	= [9367.02,8402.27,0.00139618];
+Bornholm_Spawn_North 		= [3516.31,17886.3,0.00151825];
+Bornholm_Spawn_South 		= [15296.9,163.178,0.00105];
+Bornholm_Spawn_East 		= [13281.8,12691.9,0.00137055];
+Bornholm_Spawn_West 		= [792.478,7133.28,0.00152135];
+Bornholm_Spawn_Central 	= [9367.02,8402.27,0.00139618];
 
 Chernarus_Spawn_North 		= [0,0,0];
 Chernarus_Spawn_South 		= [0,0,0];
 Chernarus_Spawn_East 		= [0,0,0];
 Chernarus_Spawn_West 		= [0,0,0];
-Chernarus_Spawn_Centeral 	= [0,0,0];
+Chernarus_Spawn_Central 	= [0,0,0];
 
 
 /* ******************************DO NOT TOUCH BELOW********************************* */
@@ -72,9 +72,9 @@ switch (_mapName) do {
 	/* Arma 3 Maps */
 	case "altis":{((findDisplay 8332) displayCtrl 1200) ctrlSetText Altis_Map;};
 	case "stratis":{((findDisplay 8332) displayCtrl 1200) ctrlSetText Statis_Map;};
-	case "bornholm":{((findDisplay 8332) displayCtrl 1200) ctrlSetText Bronholm_Map;};
+	case "bornholm":{((findDisplay 8332) displayCtrl 1200) ctrlSetText Bornholm_Map;};
 	case "chernarus":{((findDisplay 8332) displayCtrl 1200) ctrlSetText Chernarus_Map;};
-	default {((findDisplay 8332) displayCtrl 1200) ctrlSetText Bronholm_Map;};
+	default {((findDisplay 8332) displayCtrl 1200) ctrlSetText Bornholm_Map;};
 };
 
 SPAZ_SPAWN_N = {
@@ -83,9 +83,9 @@ SPAZ_SPAWN_N = {
 	switch (_mapName) do {
 		case "altis":{player setPos Altis_Spawn_North,player setDir 0;};
 		case "stratis":{player setPos Statis_Spawn_North,player setDir 0;};
-		case "bornholm":{player setPos Bronholm_Spawn_North,player setDir 317.342;};
+		case "bornholm":{player setPos Bornholm_Spawn_North,player setDir 317.342;};
 		case "chernarus":{player setPos Chernarus_Spawn_North,player setDir 0;};
-		default {player setPos Bronholm_Spawn_North,player setDir 317.342;};
+		default {player setPos Bornholm_Spawn_North,player setDir 317.342;};
 	};
 	cutText ["","BLACK IN"];
 	(findDisplay 8332) displayRemoveEventHandler ["KeyDown", noesckey];
@@ -96,9 +96,9 @@ SPAZ_SPAWN_E = {
 	switch (_mapName) do {
 		case "altis":{player setPos Altis_Spawn_East,player setDir 0;};
 		case "stratis":{player setPos Statis_Spawn_East,player setDir 0;};
-		case "bornholm":{player setPos Bronholm_Spawn_East,player setDir 278.168;};
+		case "bornholm":{player setPos Bornholm_Spawn_East,player setDir 278.168;};
 		case "chernarus":{player setPos Chernarus_Spawn_East,player setDir 0;};
-		default {player setPos Bronholm_Spawn_East,player setDir 278.168;};
+		default {player setPos Bornholm_Spawn_East,player setDir 278.168;};
 	};
 	cutText ["","BLACK IN"];
 	(findDisplay 8332) displayRemoveEventHandler ["KeyDown", noesckey];
@@ -109,9 +109,9 @@ SPAZ_SPAWN_S = {
 	switch (_mapName) do {
 		case "altis":{player setPos Altis_Spawn_South,player setDir 0;};
 		case "stratis":{player setPos Stratis_Spawn_South,player setDir 0;};
-		case "bornholm":{player setPos Bronholm_Spawn_South,player setDir 43.1966;};
+		case "bornholm":{player setPos Bornholm_Spawn_South,player setDir 43.1966;};
 		case "chernarus":{player setPos Chernarus_Spawn_South,player setDir 0;};
-		default {player setPos Bronholm_Spawn_South,player setDir 43.1966;};
+		default {player setPos Bornholm_Spawn_South,player setDir 43.1966;};
 	};
 	cutText ["","BLACK IN"];
 	(findDisplay 8332) displayRemoveEventHandler ["KeyDown", noesckey];
@@ -133,11 +133,11 @@ SPAZ_SPAWN_W = {
 SPAZ_SPAWN_C = {
 	_mapName = toLower format ["%1", worldName];
 	switch (_mapName) do {
-		case "altis":{player setPos Altis_Spawn_Centeral,player setDir 0;};
-		case "stratis":{player setPos Stratis_Spawn_Centeral,player setDir 0;};
-		case "bornholm":{player setPos Bornholm_Spawn_Centeral,player setDir 317.342;};
-		case "chernarus":{player setPos Chernarus_Spawn_Centeral,player setDir 0;};
-		default {player setPos Bornholm_Spawn_Centeral,player setDir 317.342;};
+		case "altis":{player setPos Altis_Spawn_Central,player setDir 0;};
+		case "stratis":{player setPos Stratis_Spawn_Central,player setDir 0;};
+		case "bornholm":{player setPos Bornholm_Spawn_Central,player setDir 317.342;};
+		case "chernarus":{player setPos Chernarus_Spawn_Central,player setDir 0;};
+		default {player setPos Bornholm_Spawn_Central,player setDir 317.342;};
 	};
 	cutText ["","BLACK IN"];
 	(findDisplay 8332) displayRemoveEventHandler ["KeyDown", noesckey];
