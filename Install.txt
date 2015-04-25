@@ -32,7 +32,7 @@ noesckey = (findDisplay 8332) displayAddEventHandler ["KeyDown", "if ((_this sel
 			age = "UNKNOWN";
 			name = "SPAWNPOINT";
 			expCond = "(player distance SPAWNPOINT) < 10;";
-			expActiv = "hint ""You are in the clone room""; inSpawnPoint = true;};";
+			expActiv = "hint ""You are in the clone room""; inSpawnPoint = true;";
 			expDesactiv = "inSpawnPoint = false;";
 			class Effects{};
 		};
